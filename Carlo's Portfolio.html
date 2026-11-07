@@ -1,0 +1,186 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Carlo's Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: left-aligned single column, big name up top, then About, Projects list, Contact */
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --ink: #12161d;
+  --muted: #566070;
+  --line: #d8dce3;
+  --accent: #2748d9;
+  --accent-soft: #e4e9fc;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1118;
+    --surface: #161b25;
+    --ink: #e8ebf2;
+    --muted: #98a2b3;
+    --line: #283041;
+    --accent: #8ea4ff;
+    --accent-soft: #1f2a4d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1118;
+  --surface: #161b25;
+  --ink: #e8ebf2;
+  --muted: #98a2b3;
+  --line: #283041;
+  --accent: #8ea4ff;
+  --accent-soft: #1f2a4d;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0;
+  padding-block: 40px 56px;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
+.label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+header { display: flex; flex-direction: column; gap: 14px; }
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(44px, 12vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: balance;
+}
+.role { font-size: 20px; color: var(--muted); margin: 0; }
+.role b { color: var(--ink); font-weight: 600; }
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 18px;
+  text-wrap: balance;
+}
+p { margin: 0 0 12px; max-width: 62ch; }
+.projects { display: flex; flex-direction: column; gap: 14px; }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+.card h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 0;
+}
+.card p { margin: 0; color: var(--muted); }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+.tags li {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+a.btn {
+  align-self: flex-start;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 1px;
+}
+a.btn:focus-visible, a.link:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+.card.empty { background: transparent; border-style: dashed; }
+.card.empty h3 { color: var(--muted); }
+.facts { display: grid; grid-template-columns: 1fr; gap: 0; margin: 0; }
+.facts div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); flex-wrap: wrap; }
+.facts div:last-child { border-bottom: 1px solid var(--line); }
+.facts dt { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.facts dd { margin: 0; font-weight: 500; }
+a.link { color: var(--accent); font-weight: 600; text-underline-offset: 3px; }
+footer { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="label">Portfolio</p>
+    <h1>Carlo</h1>
+    <p class="role"><b>Computer Programming</b> student</p>
+  </header>
+
+  <section aria-labelledby="about">
+    <p class="label">About</p>
+    <h2 id="about">I learn by building things.</h2>
+    <p>I'm Carlo, a Computer Programming student. This page collects the projects I make while I learn, starting with a calculator I built for my phone.</p>
+    <dl class="facts">
+      <div><dt>School</dt><dd>CCDI</dd></div>
+      <div><dt>Year level</dt><dd>1st year</dd></div>
+      <div><dt>Focus</dt><dd>Computer Programming</dd></div>
+    </dl>
+  </section>
+
+  <section aria-labelledby="projects">
+    <p class="label">Projects</p>
+    <h2 id="projects">What I've made</h2>
+    <div class="projects">
+      <article class="card">
+        <h3>Carlo 2.0 Calculator</h3>
+        <p>A calculator that works on a phone. It handles chained operations, percent, delete and clear, and it also responds to keyboard keys.</p>
+        <ul class="tags" aria-label="Technologies">
+          <li>HTML</li><li>CSS</li><li>JavaScript</li>
+        </ul>
+        <a class="btn" href="https://carloabad218-bit.github.io/carlo.18/">Open the calculator</a>
+      </article>
+
+      <article class="card empty">
+        <h3>Your next project</h3>
+        <p>Add the project name, one sentence about what it does, the tools you used, and a link.</p>
+      </article>
+
+      <article class="card empty">
+        <h3>Another project</h3>
+        <p>School activities, small programs, or websites all belong here.</p>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="contact">
+    <p class="label">Contact</p>
+    <h2 id="contact">Find me online</h2>
+    <p>My code lives on GitHub: <a class="link" href="https://github.com/carloabad218-bit">github.com/carloabad218-bit</a></p>
+    <p>Email: add your email here.</p>
+  </section>
+
+  <footer>Carlo's Portfolio</footer>
+</div>
+
+</body></html>
